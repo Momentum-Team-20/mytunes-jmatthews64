@@ -55,5 +55,15 @@ function buildDisplay(results){
         playButton.innerText = 'Play';
         box.appendChild(playButton);
 
+        //On click of playButton append audio file onto audio player
+        playButton.addEventListener('click', () => {
+            let figureBox = document.createElement('figure');
+            let audioBox = document.createElement('audio')
+            audioBox.setAttribute('controls', "");
+            audioBox.src = album.previewUrl;
+            audioPlayer.appendChild(figureBox);
+            figureBox.appendChild(audioBox);
+            console.log(audioPlayer);
+        })
     }
 }
