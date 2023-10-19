@@ -59,6 +59,7 @@ function buildDisplay(results){
         playButton.addEventListener('click', () => {
             let figureBox = document.createElement('figure');
             let audioBox = document.createElement('audio')
+            figureBox.classList.add('playerFrame');
             audioBox.setAttribute('controls', "");
             audioBox.src = album.previewUrl;
             audioPlayer.appendChild(figureBox);
