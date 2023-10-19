@@ -4,20 +4,33 @@ let searchButton = document.querySelector("#searchButton");
 const musicContainer = document.querySelector("#mainFrame");
 
 searchButton.addEventListener('click', () => {
-    // if (searchInput == ""){
-    //     alert("Please enter search criteria!")
-    // } else {
-        fetch("https://itunes.apple.com/search?alan+jackson")
+    if (searchInput == ""){
+        alert("Please enter search criteria!")
+    } else {
+        fetch("https://itunes.apple.com/search?term=alan+jackson")
         .then((Response) => {
             return Response.json();
         }).then((data) => {
             console.log(data);
-            let album = data.results[0];
-            let albumDiv = document.createElement('div');
-            albumDiv.innerText = `Song: ${album.trackName}`
-            musicContainer.appendChild(albumDiv);
+            let results = data.results;
+            for (let album of results){
+                //Create a box to put each result in
+                let box = document.createElement('div');
+                box.classList.add("albumBox");
+                musicContainer.appendChild(box);
+
+                //add album artwork
+                let albumArt = document.createElement('img');
+                albumArt.src = album.artworkUrl100;
+                albumArt.alt = "Album Cover";
+                box.appendChild(albumArt);
+
+                let albumDiv = document.createElement('div');
+                albumDiv.innerText = `Song: ${album.trackName}`
+                box.appendChild(albumDiv);
+            }
         })
-    //}
+    }
     
 })
 
