@@ -1,10 +1,13 @@
 //Grabbing all the items needed from HTML for input and output
-let searchInput = document.querySelector("#searchInput");
-let searchButton = document.querySelector("#searchButton");
+let searchForm = document.querySelector("#searchBar");
+let searchInput = document.querySelector("[searchText=searchData");
 const musicContainer = document.querySelector("#mainFrame");
 const audioPlayer = document.querySelector('#audioPlayer');
 
-searchButton.addEventListener('click', () => {
+
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log(searchInput)
     if (searchInput == ""){
         alert("Please enter search criteria!")
     } else {
