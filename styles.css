@@ -19,8 +19,9 @@ h1 {
 /*Formating for the audio player section*/
 
 #audioPlayer {
-    border: dotted blue 2px;
     height: 85px;
+    background-color: rgba(128, 128, 128, 0.200);
+    padding-top: 10px;
 }
 
 /*Formating for the search bar*/
@@ -30,7 +31,8 @@ h1 {
     align-items: center;
     width: 100%;
     height: 10vh;
-    border: solid green 2px;
+    border-top: solid grey 2px;
+    border-bottom: solid rgb(207, 207, 207) 2px;
     margin-bottom: 20px;
 }
 
