@@ -1,14 +1,14 @@
 //Grabbing all the items needed from HTML for input and output
 let searchForm = document.querySelector("#searchBar");
-let searchInput = document.querySelector("[searchText=searchData");
+let searchInput = document.querySelector("[name=searchData");
 const musicContainer = document.querySelector("#mainFrame");
 const audioPlayer = document.querySelector('#audioPlayer');
 
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(searchInput)
-    if (searchInput == ""){
+    console.log(searchInput.value);
+    if (searchInput.value == ""){
         alert("Please enter search criteria!")
     } else {
         fetch("https://itunes.apple.com/search?term=alan+jackson")
