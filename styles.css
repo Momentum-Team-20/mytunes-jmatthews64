@@ -1,0 +1,43 @@
+#mainFrame {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Formating for the header of the page */
+h1 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 10vh;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 30px;
+    margin-bottom: -10px;
+}
+
+/*Formating for the audio player section*/
+
+#audioPlayer {
+    border: dotted blue 2px;
+    height: 20px;
+}
+
+/*Formating for the search bar*/
+#searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    border: solid green 2px;
+}
+
+#searchButton {
+    height: 25px;
+}
+
+#searchInput {
+    width: 75%;
+    margin-right: 5px;
+    height: 20px;
+}
