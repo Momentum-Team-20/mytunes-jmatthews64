@@ -7,7 +7,7 @@
 /*Formating for the header of the page */
 h1 {
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 10vh;
     margin-top: -10px;
     margin-left: -10px;
@@ -47,15 +47,22 @@ h1 {
 /*Formating for album boxes*/
 .albumBox {
     display: flex;
-    flex-direction: column;
-
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
     min-width: 100px;
     max-width: 200px;
     height: auto;
-    justify-content: center;
     padding: 10px;
 }
 
 img {
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.nameBox {
+    margin: 2px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

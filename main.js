@@ -30,13 +30,23 @@ function buildDisplay(results){
         albumArt.alt = "Album Cover";
         box.appendChild(albumArt);
 
+        //create track name div and add to box
         let songName = document.createElement('div');
         songName.innerText = `Song: ${album.trackName}`
+        songName.classList.add("nameBox")
         box.appendChild(songName);
 
+        //create artist name div and add to box
         let artistName = document.createElement('div');
         artistName.innerText = `Artist: ${album.artistName}`;
+        artistName.classList.add("nameBox")
         box.appendChild(artistName);
+
+        //create album name div and add to box
+        let albumName = document.createElement('div');
+        albumName.innerText = `Album: ${album.collectionName}`;
+        albumName.classList.add("nameBox")
+        box.appendChild(albumName);
 
     }
 }
