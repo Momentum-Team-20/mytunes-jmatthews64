@@ -2,6 +2,7 @@
 let searchInput = document.querySelector("#searchInput");
 let searchButton = document.querySelector("#searchButton");
 const musicContainer = document.querySelector("#mainFrame");
+const audioPlayer = document.querySelector('#audioPlayer');
 
 searchButton.addEventListener('click', () => {
     if (searchInput == ""){
@@ -47,6 +48,12 @@ function buildDisplay(results){
         albumName.innerText = `Album: ${album.collectionName}`;
         albumName.classList.add("nameBox")
         box.appendChild(albumName);
+
+        //creates a play button
+        let playButton = document.createElement('button');
+        playButton.classList.add('playButton');
+        playButton.innerText = 'Play';
+        box.appendChild(playButton);
 
     }
 }
