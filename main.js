@@ -7,11 +7,10 @@ const audioPlayer = document.querySelector('#audioPlayer');
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(searchInput.value);
     if (searchInput.value == ""){
         alert("Please enter search criteria!")
     } else {
-        fetch("https://itunes.apple.com/search?term=alan+jackson")
+        fetch("https://itunes.apple.com/search?term=" + searchInput.value)
         .then((Response) => {
             return Response.json();
         }).then((data) => {
@@ -55,7 +54,7 @@ function buildDisplay(results){
         //creates a play button
         let playButton = document.createElement('button');
         playButton.classList.add('playButton');
-        playButton.innerText = 'Play';
+        playButton.innerText = 'Play Preview';
         box.appendChild(playButton);
 
         //On click of playButton append audio file onto audio player
