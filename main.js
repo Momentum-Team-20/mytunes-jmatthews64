@@ -30,8 +30,13 @@ function buildDisplay(results){
         albumArt.alt = "Album Cover";
         box.appendChild(albumArt);
 
-        let albumDiv = document.createElement('div');
-        albumDiv.innerText = `Song: ${album.trackName}`
-        box.appendChild(albumDiv);
+        let songName = document.createElement('div');
+        songName.innerText = `Song: ${album.trackName}`
+        box.appendChild(songName);
+
+        let artistName = document.createElement('div');
+        artistName.innerText = `Artist: ${album.artistName}`;
+        box.appendChild(artistName);
+
     }
 }
