@@ -69,10 +69,8 @@ function buildDisplay(results){
 
         //On click of playButton append audio file onto audio player
         playButton.addEventListener('click', () => {
-            let audioBox = document.createElement('audio')
-            audioBox.setAttribute('controls', "");
-            audioBox.src = album.previewUrl;
-            figureBox.appendChild(audioBox);            
+            audioPlayer.src = album.previewUrl;
+            
         })
     }
 }
