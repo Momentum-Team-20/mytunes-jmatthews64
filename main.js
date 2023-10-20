@@ -20,7 +20,11 @@ searchForm.addEventListener('submit', (event) => {
         .then((Response) => {
             return Response.json();
         }).then((data) => {
-            buildDisplay(data.results);
+            if (data.resultCount === 0) {
+                alert("No Results");
+            } else {
+                buildDisplay(data.results);
+            }
         })
     }
     
