@@ -4,6 +4,7 @@ let searchInput = document.querySelector("[name=searchData");
 const musicContainer = document.querySelector("#mainFrame");
 const audioPlayer = document.querySelector('#audioPlayer');
 const resetButton = document.querySelector("#resetButton");
+const figureBox = document.querySelector(".playerFrame");
 
 resetButton.addEventListener('click', () => {
     location.reload();
@@ -64,14 +65,10 @@ function buildDisplay(results){
 
         //On click of playButton append audio file onto audio player
         playButton.addEventListener('click', () => {
-            let figureBox = document.createElement('figure');
             let audioBox = document.createElement('audio')
-            figureBox.classList.add('playerFrame');
             audioBox.setAttribute('controls', "");
             audioBox.src = album.previewUrl;
-            audioPlayer.appendChild(figureBox);
-            figureBox.appendChild(audioBox);
-            
+            figureBox.appendChild(audioBox);            
         })
     }
 }
