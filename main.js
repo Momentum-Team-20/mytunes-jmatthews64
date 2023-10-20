@@ -3,6 +3,11 @@ let searchForm = document.querySelector("#searchBar");
 let searchInput = document.querySelector("[name=searchData");
 const musicContainer = document.querySelector("#mainFrame");
 const audioPlayer = document.querySelector('#audioPlayer');
+const resetButton = document.querySelector("#resetButton");
+
+resetButton.addEventListener('click', () => {
+    location.reload();
+})
 
 
 searchForm.addEventListener('submit', (event) => {
@@ -66,7 +71,7 @@ function buildDisplay(results){
             audioBox.src = album.previewUrl;
             audioPlayer.appendChild(figureBox);
             figureBox.appendChild(audioBox);
-            console.log(audioPlayer);
+            
         })
     }
 }
