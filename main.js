@@ -5,7 +5,7 @@ const musicContainer = document.querySelector("#mainFrame");
 const audioPlayer = document.querySelector('#audioPlayer');
 const resetButton = document.querySelector("#resetButton");
 const figureBox = document.querySelector(".playerFrame");
-const selectedOption = document.querySelectorAll("#searchOptions");
+const selectedOption = document.getElementById("searchOptions");
 let searchURL;
 
 console.log(selectedOption);
@@ -21,7 +21,7 @@ searchForm.addEventListener('submit', (event) => {
     if (searchInput.value == ""){
         alert("Please enter search criteria!")
     } else {
-        urlBuilder(selectedOption);
+        urlBuilder(selectedOption.value);
         fetch(searchURL)
         .then((Response) => {
             return Response.json();
