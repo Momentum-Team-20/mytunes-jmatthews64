@@ -5,6 +5,11 @@ const musicContainer = document.querySelector("#mainFrame");
 const audioPlayer = document.querySelector('#audioPlayer');
 const resetButton = document.querySelector("#resetButton");
 const figureBox = document.querySelector(".playerFrame");
+const selectedOption = document.querySelectorAll("#searchOptions");
+let searchURL;
+
+console.log(selectedOption);
+console.log(selectedOption.value);
 
 resetButton.addEventListener('click', () => {
     location.reload();
@@ -16,7 +21,8 @@ searchForm.addEventListener('submit', (event) => {
     if (searchInput.value == ""){
         alert("Please enter search criteria!")
     } else {
-        fetch(`https://itunes.apple.com/search?term=${searchInput.value}&entity=song`)
+        urlBuilder(selectedOption);
+        fetch(searchURL)
         .then((Response) => {
             return Response.json();
         }).then((data) => {
@@ -74,3 +80,19 @@ function buildDisplay(results){
         })
     }
 }
+
+function urlBuilder(option) {
+    console.log(option);
+    switch (option) {
+        case "all": searchURL = `https://itunes.apple.com/search?term=${searchInput.value}`;
+            break;
+        case "artist": console.log("search artist");
+            break;
+        case "song": console.log("search song");
+            break;
+        case "album": console.log("search albums");
+            break;
+        default: searchURL = `https://itunes.apple.com/search?term=${searchInput.value}`;
+    }
+}
+
