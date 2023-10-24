@@ -9,11 +9,25 @@ h1 {
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 10vh;
+    font-size: 64px;
     margin-top: -10px;
     margin-left: -10px;
     margin-right: -10px;
     padding-top: 30px;
     margin-bottom: -10px;
+    color: aliceblue;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 10vh;
+    color: aliceblue;
+}
+
+header {
+    background-image: url("https://assets.epicurious.com/photos/569faad565ed6de12b38dbf7/16:9/w_2000,h_1125,c_limit/shutterstock_338604542.jpg");
+    margin-bottom: -20px;
 }
 
 /*Formating for the audio player section*/
