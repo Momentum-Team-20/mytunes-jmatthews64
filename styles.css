@@ -50,6 +50,10 @@ header {
     margin-bottom: 20px;
 }
 
+#searchOptions {
+    margin: 5px;
+}
+
 #searchButton {
     height: 25px;
 }
