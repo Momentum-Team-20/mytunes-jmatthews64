@@ -16,7 +16,7 @@ searchForm.addEventListener('submit', (event) => {
     if (searchInput.value == ""){
         alert("Please enter search criteria!")
     } else {
-        fetch(`https://itunes.apple.com/search?term=${searchInput.value}`)
+        fetch(`https://itunes.apple.com/search?term=${searchInput.value}&entity=song`)
         .then((Response) => {
             return Response.json();
         }).then((data) => {
