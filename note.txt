@@ -1,3 +1,4 @@
 TODO:
 - Add autoplay feature when song loads
 - remove resent button and have page update on new search click
+- Find out how to load an artists page in Nacho Tunes rather than going to iTunes

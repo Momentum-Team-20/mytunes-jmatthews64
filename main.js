@@ -25,13 +25,15 @@ searchForm.addEventListener('submit', (event) => {
         }).then((data) => {
             if (data.resultCount === 0) {
                 alert("No Results");
-            } else if(selectedOption.value === "all"){
-                buildDisplayAll(data.results);
             } else if(selectedOption.value === "artist") {
                 buildDisplayArtist(data.results);
             } else if(selectedOption.value === "song") {
                 buildDisplayAll(data.results);
-            }
+            } else if (selectedOption.value === "genre") {
+                buildDisplayGenre(data.results);
+            } else {
+                buildDisplayAll(data.results);
+            } 
         })
     }
     
@@ -90,13 +92,47 @@ function urlBuilder(option) {
             break;
         case "song": searchURL = `https://itunes.apple.com/search?term=${searchInput.value}&entity=song`;
             break;
-        case "album": console.log("search albums");
+        case "genre": searchURL = `https://itunes.apple.com/search?term=${searchInput.value}&entity=allArtist&attribute=genreIndex`;
             break;
         default: searchURL = `https://itunes.apple.com/search?term=${searchInput.value}`;
     }
 }
 
 function buildDisplayArtist(results){
+    for (let artist of results){
+        //Create a box to put each result in
+        let box = document.createElement('div');
+        box.classList.add("albumBox");
+        musicContainer.appendChild(box);
+
+        //create artist name div and add to box
+        let artistName = document.createElement('div');
+        artistName.innerText = `Artist: ${artist.artistName}`;
+        artistName.classList.add("nameBox")
+        box.appendChild(artistName);
+
+        //create genre div and add to box
+        let genre = document.createElement('div');
+        genre.innerText = `Genre: ${artist.primaryGenreName}`;
+        genre.classList.add("nameBox")
+        box.appendChild(genre);
+
+        //creates a play button
+        let playButton = document.createElement('button');
+        playButton.classList.add('playButton');
+        playButton.innerText = 'Artist\'s Music';
+        box.appendChild(playButton);
+
+        //On click of playButton append audio file onto audio player
+        playButton.addEventListener('click', () => {
+            artistURL = artist.artistLinkUrl;
+            window.location.replace(artistURL);
+            
+        })
+    }
+}
+
+function buildDisplayGenre(results){
     for (let artist of results){
         //Create a box to put each result in
         let box = document.createElement('div');
