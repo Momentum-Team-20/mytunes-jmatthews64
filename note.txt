@@ -1,0 +1,3 @@
+TODO:
+- Add autoplay feature when song loads
+- remove resent button and have page update on new search click

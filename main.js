@@ -29,6 +29,8 @@ searchForm.addEventListener('submit', (event) => {
                 buildDisplayAll(data.results);
             } else if(selectedOption.value === "artist") {
                 buildDisplayArtist(data.results);
+            } else if(selectedOption.value === "song") {
+                buildDisplayAll(data.results);
             }
         })
     }
@@ -86,7 +88,7 @@ function urlBuilder(option) {
             break;
         case "artist": searchURL = `https://itunes.apple.com/search?term=${searchInput.value}&entity=allArtist&attribute=allArtistTerm`;
             break;
-        case "song": console.log("search song");
+        case "song": searchURL = `https://itunes.apple.com/search?term=${searchInput.value}&entity=song`;
             break;
         case "album": console.log("search albums");
             break;
